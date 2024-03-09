@@ -1,0 +1,153 @@
+.card {
+  cursor: pointer;
+  perspective: 3000px;
+  width: 500px; 
+  height: 300px;
+  margin: 50px auto; 
+  position: relative;
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.card-front {
+  background-color: #fff; /* front card color */
+  z-index: 2; /* Ensure front card is above the back card initially */
+}
+
+.card-back {
+  background-color: #fafafa; /* back card color, can be different from the front */
+  transform: rotateY(180deg); /* Flip the back card to hide it initially */
+  z-index: 1; /* Lower z-index so it's behind the front card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.card.flipped .card-front {
+  transform: rotateY(180deg); /* Flip the front card to hide it */
+  z-index: 1; /* Lower z-index so the back card can be above when flipped */
+}
+
+.card.flipped .card-back {
+  transform: rotateY(360deg); /* Rotate back to the initial position to show it */
+  z-index: 2; /* Higher z-index to bring it to front when the card is flipped */
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* This sets the font to Arial, but you can choose any font you like */
+  color: black; /* This sets the text color to black */
+  background-color: white; /* This sets the background color to white */
+  margin: 0; /* This removes the default margin that browsers add */
+  padding: 0; /* This removes the default padding that browsers add */
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  min-height: 100vh; /* Sets the minimum height to 100% of the viewport height */
+  flex-direction: column; /* Organizes children in a column */
+   /* ... other styles ... */
+   background-image: url('https://static.vecteezy.com/system/resources/previews/024/391/240/non_2x/neon-question-mark-frame-quiz-lighting-interrogation-point-red-neon-lamp-on-bricks-wall-texture-background-3d-illustration-vector.jpg'); /* Update with the correct path */
+   background-size: cover; /* This will ensure that the image covers the entire space */
+   background-position: center; /* This will center your image in the window */
+   background-repeat: no-repeat; /* This will make sure the image doesn't repeat */
+}
+
+/* Additional global styles */
+h1, h2, span {
+  margin: 0.5em 0; /* Adds vertical spacing between text elements */
+  color: white;
+}
+
+/* Style for the main container */
+.app-container {
+  text-align: center; /* Centers the text inside the main container */
+  width: 100%; /* Sets the width to 100% of the parent element */
+  max-width: 1200px; /* Maximum width of the container */
+  padding: 20px; /* Padding inside the container */
+}
+
+/* General styles */
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* Main container styles */
+.app-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Flashcard container styles */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Button styles */
+.next-button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #4CAF50; /* This is a placeholder color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .next-button {
+    width: 100%; /* Make the button full width on smaller screens */
+    padding: 15px 20px; /* Increase padding for better touch targets */
+  }
+
+  /* Adjust font sizes on smaller screens */
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  
+  p {
+    font-size: 0.9em;
+  }
+}
+
+.card-image {
+  width: 30%; /* Adjust this value as needed to control the image size */
+  height: auto;
+  margin-top: 10px; /* Adds some space between the text and the image */
+  border-radius: 8px; /* Optional: for rounded corners */
+}
+
+
+
