@@ -4,7 +4,7 @@ Submitted by: **Khalid Shams**
 
 This web app: **The Ulitimate Trivia game where you can test you knowledge on specific subjects**
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
 ## Required Features
 
